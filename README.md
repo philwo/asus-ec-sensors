@@ -34,6 +34,7 @@ the hwmon-next branch.
  * ROG STRIX X570-E GAMING WIFI II
  * ROG STRIX X570-F GAMING
  * ROG STRIX X570-I GAMING
+ * ROG STRIX X870-I GAMING WIFI
  * ROG STRIX Z390-F GAMING
  * ROG STRIX Z690-A GAMING WIFI D4
  * ROG ZENITH II EXTREME
@@ -41,7 +42,7 @@ the hwmon-next branch.
 
 ## Installation
 
-[Gentoo ebuild](https://github.com/zeule/gentoo-zeule/tree/master/sys-power/asus-ec-sensors) and 
+[Gentoo ebuild](https://github.com/zeule/gentoo-zeule/tree/master/sys-power/asus-ec-sensors) and
 [AUR package](https://aur.archlinux.org/packages/asus-ec-sensors-dkms-git) are available. Alternatively,
 you can clone the repository and then use standard `make` and `make modules_install` (as root) commands.
 If you use DKMS, `make dkms` will build the module and add it to the DKMS tree for future updates.
@@ -71,7 +72,7 @@ The last step is to find out how to secure access to the EC from race condition,
 same data. If you are lucky, the name of a ACPI mutex, which is used for synchronising access to the EC, can be found
 out in the decompiled code of the ACPI firmware.
 
-First, you need to obtain ACPI DSDT source for your board. You can get it from `/sys/firmware/acpi/tables/DSDT` 
+First, you need to obtain ACPI DSDT source for your board. You can get it from `/sys/firmware/acpi/tables/DSDT`
 in the binary form and decompile using the iasl tool from the acpica package:
 ```shell
 $ sudo cat /sys/firmware/acpi/tables/DSDT > dsdt.dat
